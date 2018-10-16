@@ -27,6 +27,5 @@
    </bean>
 
 	<mybatis-spring:scan base-package="org.kidding.mapper"/>
-	<mybatis-spring:scan base-package="org.kidding.domain"/>
 	
 </beans>
