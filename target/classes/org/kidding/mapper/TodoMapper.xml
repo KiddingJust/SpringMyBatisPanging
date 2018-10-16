@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <!-- 인터페이스와 동일하게 이름을 맞추어주어야 함. 메소드 이름은 id-->
+ <mapper namespace="org.kidding.mapper.TodoMapper">
+ 	<select id="select" resultType="org.kidding.domain.Todo">
+		select * from tbl_todo
+ 	</select>
+ 
+ 	<insert id="insert">
+		insert into tbl_todo (title) values (#{title})
+ 	</insert>
+ 
+	<delete id="delete">
+		delete from tbl_todo where tno=#{tno}
+ 	</delete>
+ 
+ 	<update id="update">
+		update tbl_todo set title=#{title} where tno=#{tno}
+ 	</update>
+ </mapper>
+  
