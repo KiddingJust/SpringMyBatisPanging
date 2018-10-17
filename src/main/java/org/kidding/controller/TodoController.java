@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.kidding.domain.OrderList;
+import org.kidding.domain.StoreVO;
 import org.kidding.domain.Todo;
 import org.kidding.service.TodoService;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,12 @@ public class TodoController {
 
 	//이거 하나만 주입하므로 자동주입 가능. 
 	private TodoService service;
+	
+	@GetMapping("/stores")
+	public @ResponseBody List<StoreVO> getStores(String cat){
+	
+		return service.getStores(cat);
+	}
 	
 	// ResponseBody가 없으면 list2.jsp로 감. ResponseBody 해주면 localhost:8080/todo/list2 했을 때 json 데이터 나옴. 
 	// ResponseBody는 내부적으로 결과를 변환하여 반환. 어떤 형식으로 변환할지는 직접 지정할 수 있음. 
