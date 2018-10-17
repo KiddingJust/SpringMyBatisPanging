@@ -1,7 +1,5 @@
 package org.kidding.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import org.kidding.mapper.TimeMapper;
@@ -10,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,6 +24,15 @@ public class HomeController {
 	
 	@Setter(onMethod_=@Autowired)
 	private TimeMapper mapper;
+	
+	@GetMapping("/home2")
+	public void home2(String str, int age, Model model) {
+		logger.info("str............");
+		logger.info(str);
+		model.addAttribute("str", str);
+		model.addAttribute("age", age);
+	}
+	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
